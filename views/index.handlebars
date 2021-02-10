@@ -18,30 +18,14 @@
 
 <script>
     $(document).ready(() => {
-        /* $('form').on('submit', e =>{
-             e.preventDefault()
-             $.ajax({
-                 url:'/',
-                 method: 'POST',
-                 data: {
-                     wish:$('textarea').val()
-                 }
-             }).then(response =>{
-                 window.location = '/'
-             })
-             .catch(err => console.log(err))
-         })
-     })
-     */
-
         const textarea = $('textarea')
          const form = $('form')
- console.log('TESt')
          // POST
          form.on('submit', function(e)  {
              
              e.preventDefault()
              const shouldUpdate = !!$(this).find('button').attr('data-id')
+             console.log(shouldUpdate)
              if(shouldUpdate) {
                  updateWish()
  
@@ -61,7 +45,7 @@
                  window.location = '/'
             })
              .catch(err => console.log(err))
-     })
+         }
  
     function updateWish()  {
      const id = form.find('button').attr('data-id')
@@ -98,10 +82,10 @@
             textarea.val(wishToEdit)
             form.find('button')
                 .text('edit Wish')
-                .attr('data-id, id')
+                .attr('data-id', id )
 
        
         })
     })
 
-<script>
+</script>
